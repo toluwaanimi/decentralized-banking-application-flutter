@@ -18,8 +18,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Gilroy',
         primarySwatch: Colors.blue,
       ),
-      home: DashboardScreen(),
+      home: OnBoardingScreen(),
     );
   }
 }
-

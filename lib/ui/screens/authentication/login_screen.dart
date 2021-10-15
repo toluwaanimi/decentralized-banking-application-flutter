@@ -1,5 +1,7 @@
+import 'package:bank_app/ui/screens/dashboard/dashboard_screen.part.dart';
 import 'package:bank_app/ui/widgets/custom_button.dart';
 import 'package:bank_app/ui/widgets/custom_text_field.dart';
+import 'package:bank_app/utils/navigation/navigator.dart';
 import 'package:bank_app/utils/styles/color_utls.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +23,15 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               Text(
                 'Log in',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900,),
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w900,
+                ),
               ),
               CustomTextField(
                 hint: "Email, ID, phone number or username",
@@ -48,22 +55,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: 20),
-              Text('Forgot Password?', style: TextStyle(
-                color: purple,
-                fontWeight: FontWeight.bold
-              ),),
+              Text(
+                'Forgot Password?',
+                style: TextStyle(color: purple, fontWeight: FontWeight.bold),
+              ),
               Spacer(),
-              CustomButton(text: 'Login', onTap: (){
-
-              }),
-              SizedBox(height: 10,),
+              CustomButton(
+                  text: 'Login',
+                  onTap: () {
+                    pushReplacementTo(
+                      context,
+                      DashboardScreen(),
+                    );
+                  }),
+              SizedBox(
+                height: 10,
+              ),
               Row(
-                children: [
-                  Text("Don't have an account?"),
-                  Text("Register")
-                ],
+                children: [Text("Don't have an account?"), Text("Register")],
               )
-
             ],
           ),
         ),
